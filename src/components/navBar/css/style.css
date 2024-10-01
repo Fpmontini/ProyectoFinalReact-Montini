@@ -1,0 +1,35 @@
+
+/* header */
+.fm__header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: none;
+  margin: none;
+  padding: none;
+  z-index: 999;
+  background-color: #f5f5f5;
+  border-bottom: 5px solid #cc2059;
+}
+
+/* nav-bar*/
+.navbar-nav .nav-link {
+  font-family: audiowide;
+  font-size: 1em;
+  color: #2e2c2cc7;
+}
+.navbar-nav {
+  font-family: audiowide;
+  font-size: 1.4em;
+  color: #070707;
+}
+.navbar-nav :hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  text-decoration: underline;
+}
+

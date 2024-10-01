@@ -1,13 +1,19 @@
 
+// imports
 import './App.css'
+import NavBar from './components/navBar/navBar.jsx'
+import Footer from './components/Footer/Footer.jsx'
+import ItemListContainer from './components/itemListContainer/ItemListContainer.jsx'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-   <div>
-      <h1>Hola Putos</h1>
-   </div>
+    <div className='fm__main'>
+      <NavBar/>
+      <ItemListContainer bienvenida ={'Bienvenidos a una nueva experiencia'}/>
+      <Footer/>
+    </div>
   )
 }
 
