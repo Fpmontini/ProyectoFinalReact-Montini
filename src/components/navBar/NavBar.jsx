@@ -1,7 +1,7 @@
 // imports
 import './css/style.css'
-import monbroLogo from '../navBar/assets/banner.webp'
-import Cart from '../cartWidget/CartWidget'
+import monbroLogo from '../'
+import Cart from '../../ '
 // componente funcional
 
 function NavBar() {
