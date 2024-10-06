@@ -1,6 +1,6 @@
 // imports
 import './css/style.css'
-import logoFooter from'./assets/LOGO.webp'
+import logoFooter from'../../assets/LOGO.webp'
 
 
 // componente funcional
