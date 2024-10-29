@@ -5,9 +5,62 @@
   }
 
   .fm__h1 {
-    padding: 25px 0 50px;
+    padding: 0px 0 50px;
     font-family: "Audiowide", "sans-serif";
     color: #f5f5f5;
     font-size: 3rem;
     text-align: center;
+  }
+/* main prodcuts */
+.fm__cards {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .fm__cards__description {
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* fondo semitransparente */
+  }
+  .fm__cards__description h2 {
+    text-align: center;
+    color: #f5f5f5;
+    font-family: "Audiowide", "sans-serif";
+    font-size: 2em;
+  }
+  .fm__cards__description p {
+    text-align: center;
+    padding: 0 30px;
+    font-family: "jaldi";
+    font-size: 1.5em;
+    color: #f5f5f5;
+  }
+  .fm__link {
+    text-align: center;
+    padding: 0 30px;
+    font-family: "audiowide";
+    font-size: 1.5em;
+    color: #f5f5f5;
+  }
+  .fm__cards__img {
+    justify-content: center;
+  }
+  .fm__cards__img img {
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .item__search {
+    position: fixed;
+  top: 140px; /* Ajusta este valor según cuánto espacio necesitas para evitar la barra nav */
+  left: 130px;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height:30px;
+  z-index: 1000; /* Asegúrate de que esté al frente de otros elementos */
+  background-color: #bebaba; /* Color de fondo para que destaque */
+  border: 1px solid #0e0d0d;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
   }

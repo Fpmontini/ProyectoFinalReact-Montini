@@ -1,20 +1,30 @@
 
-// imports
+
 import './App.css'
 import NavBar from './components/navBar/navBar.jsx'
 import Footer from './components/Footer/Footer.jsx'
-import ItemListContainer from './components/itemListContainer/ItemListContainer.jsx'
-import Products from './components/Products/Products.jsx'
+import ItemListContainerWithHoc from './components/itemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+//import Cart from './components/cartWidget/CartWidget.jsx'
 
 function App() {
 
   return (
+
     <div className='fm__main'>
-      <NavBar/>
-      <ItemListContainer bienvenida ={'Bienvenidos a una nueva experiencia'}/>
-      <Products/>
-      <Footer/>
+      <BrowserRouter>   
+        <NavBar/>
+
+        <Routes>
+          <Route path="/" element={<ItemListContainerWithHoc/>} />
+          <Route path="/category/:idCategory" element={<ItemListContainerWithHoc/>} />
+          <Route path="/detail/:idProduct" element={<ItemDetailContainer/>} />
+        </Routes>
+
+        <Footer/>       
+      </BrowserRouter>
     </div>
   )
 }

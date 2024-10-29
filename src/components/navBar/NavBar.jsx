@@ -1,21 +1,23 @@
 // imports
 import './css/style.css'
-import monbroLogo from '../../assets/banner.webp'
+import monbroLogo from './assets/banner.webp'
+import { Link } from 'react-router-dom'
 import Cart from '../cartWidget/CartWidget'
+
 // componente funcional
 
-function NavBar() {
+const NavBar = () => {
   return (
     <header className="fm__header-container">
       <nav className="navbar navbar-expand-md">
         <div className="container">
-          <a className="navbar-brand"  href="./index.html">
+          <Link to="/" className="navbar-brand">
             <img src={monbroLogo} alt="logo-monbro" width="400" height="150"/>
-          </a>
+          </Link>
         </div>
       </nav>
       <nav className="navbar navbar-expand-md">
-        <div className="container">
+        <div className="conta iner">
           <div className="container-fluid"></div>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,12 +25,14 @@ function NavBar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <div className="navbar-nav">
-                <a className="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                <a className="nav-link" href="./html/products.html">Productos</a>
-                <a className="nav-link" href="./html/faq.html">FAQ</a>
-                <a className="nav-link" href="./html/contact.html">Contacto</a>
-                <a className="nav-link" href="./html/about-us.html">Nosotros</a>
-                <a className="nav-link"><Cart /></a>
+                <Link to="/" className="nav-link active" aria-current="page">Inicio</Link>
+                <Link to="/category/volantes" className = "nav-link category">Volantes</Link>
+                <Link to="/category/cockpits" className = "nav-link category">Cockpits</Link>
+                <Link to="/category/pedaleras" className = "nav-link category">Pedaleras</Link>
+                <a className="nav-link" href="...">FAQ</a>
+                <a className="nav-link" href="...">Contacto</a>
+                <a className="nav-link" href="...">Nosotros</a>
+                <a className="nav-link"><Cart/></a>
               </div>
             </div>
         </div>

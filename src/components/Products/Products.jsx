@@ -12,8 +12,8 @@ function Products() {
 
   return (
   <div>
-    <h2 className="fm__h2">Nuestros Cockpits</h2>
-    <div class="container-fluid">
+    <h1 className="fm__h1">Nuestros Cockpits</h1>
+    <div className="container-fluid">
       <div className="row justify-content-around"> 
         <div className=" fm__cards col-md-3 col-sm-12 m-2"> 
           <div className="card-img fm__cards__img">
@@ -25,9 +25,7 @@ function Products() {
               que le da al conjunto una gran resistencia. Las columnas centrales son de perfiles 4080 mientras que el
               resto es de 4040.</p>
           </div>
-          <div className='btn'>
           <AddCartButton/>
-          </div>
         </div>
         <div className="fm__cards col-md-3 col-sm-12 m-2">
           <div className="card-img fm__cards__img">
@@ -38,9 +36,7 @@ function Products() {
             <p>El modelo <b>PRO</b> a diferencia del basic esta construido enteramente con
               perfiles 4080. Pensado para bases direct drive de muchos NM y potencia.</p>
           </div>
-          <div className='btn'>
           <AddCartButton/>
-          </div>
         </div>
         <div className="fm__cards col-md-3 col-sm-12 m-2">
           <div className="card-img fm__cards__img ">
@@ -52,9 +48,7 @@ function Products() {
               totalmente regulable en altura, distancia y en inclinacion. Podes elegir configurarlo tipo GT o Formula,
               de alli su nomenclaura.</p>
           </div>
-          <div className='btn'>
           <AddCartButton/>
-          </div>
         </div>
       </div>
     </div>

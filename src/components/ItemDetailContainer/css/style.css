@@ -1,0 +1,39 @@
+  .fm__detail{
+    margin-top: 180px;
+    padding-top: 100px;
+  }
+
+  .fm__h1 {
+    text-align: center;
+    color: #f5f5f5;
+    font-family: "Audiowide", "sans-serif";
+  }
+  
+  .detail__card {
+    width: 500px;
+  }
+  .detail__description {
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* fondo semitransparente */
+  }
+  .detail__description h2 {
+    text-align: center;
+    color: #f5f5f5;
+    font-family: "Audiowide", "sans-serif";
+    font-size: 2em;
+  }
+  .detail__description p {
+    text-align: justify       ;
+    padding: 0 30px;
+    font-family: "jaldi";
+    font-size: 1.5em;
+    color: #f5f5f5;
+  }
+  .detail__img {
+    justify-content: center;
+  }
+  .detail__img img {
+    width: 100%;
+    min-width: 200px;
+  }
