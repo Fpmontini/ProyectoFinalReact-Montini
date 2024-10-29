@@ -11,7 +11,7 @@ import { getProducts } from '../../data/data'
 
 
 // componente funcional
-const ItemListContainer = () => {
+const ItemListContainer = () => { //no funciona el hoc por la logica de filtrado por categorias - ver como solucionarlo
   const [products, setProducts]=useState([])
   const {idCategory} = useParams()
 
@@ -33,7 +33,7 @@ const ItemListContainer = () => {
 
   return (
     <div className='container-fluid'>
-        <div className="fm_main row justify-content-center">
+          <div className="fm_main row justify-content-center">
             <h1 className="fm__h1 col-md-8 col-sm 3 text-align-center m-4">
                 Bienvenidos a una nueva experiencia
             </h1>
