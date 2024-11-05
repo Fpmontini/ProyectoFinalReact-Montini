@@ -11,7 +11,7 @@ const Item = ({ product }) => {
                 </div>
                 <div className="fm__cards__description"> 
                     <h2>Modelo: {product.name}</h2>
-                    <p>Precio: ${product.price}</p>
+                    <p>Precio: u$s{product.price}</p>
                     <Link to={"/detail/"+ product.id} className='fm__link'>Mas info</Link>
                 </div>
             </div>

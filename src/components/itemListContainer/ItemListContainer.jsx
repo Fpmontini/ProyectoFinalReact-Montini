@@ -6,7 +6,10 @@ import ItemList from './ItemList'
 import hocFilterProducts from '../../hoc/hocFilterProducts'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { getProducts } from '../../data/data'
+import { getDocs, collection } from 'firebase/firestore'
+import db from '../../db/db.js'
+
+
 
 
 
@@ -15,20 +18,22 @@ const ItemListContainer = () => { //no funciona el hoc por la logica de filtrado
   const [products, setProducts]=useState([])
   const {idCategory} = useParams()
 
+  const getProducts = () => {
+    const productsRef = collection (db, "products")
+
+    getDocs(productsRef)
+      .then ((dataDb) => {
+        const data = dataDb.docs.map((productDb)=>{
+        return { id: productDb.id, ...productDb.data()} //spread porque no puede haber objeto dentro de objeto
+      })
+
+      setProducts(data)
+    })
+    
+  }
+
     useEffect(() => {
       getProducts()
-        .then((data)=>{
-          if(idCategory){
-            const productsFilter = data.filter((product)=> product.category === idCategory)
-            setProducts(productsFilter)
-          }else{
-            setProducts(data)
-          }
-        })
-      .catch((error) =>{
-        console.error(error)
-      })
-      
     }, [idCategory])
 
   return (
@@ -43,6 +48,7 @@ const ItemListContainer = () => { //no funciona el hoc por la logica de filtrado
 
   )
 }
+
 
 const ItemListContainerWithHoc = hocFilterProducts(ItemListContainer)
 
