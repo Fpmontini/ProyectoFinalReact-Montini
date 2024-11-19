@@ -2,7 +2,8 @@
 import './css/style.css'
 import monbroLogo from './assets/banner.webp'
 import { Link } from 'react-router-dom'
-import Cart from '../cartWidget/CartWidget'
+import CartWidget from '../cartWidget/CartWidget'
+
 
 // componente funcional
 const NavBar = () => {
@@ -34,7 +35,7 @@ const NavBar = () => {
               <a className="nav-link" href="#">Contacto</a>
               <a className="nav-link" href="#">Nosotros</a>
               <div className="nav-link">
-                <Cart />
+                <CartWidget />
               </div>
             </div>
           </div>

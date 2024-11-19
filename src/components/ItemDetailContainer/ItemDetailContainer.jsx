@@ -1,7 +1,6 @@
 // imports
 import "./css/style.css"
 import { useState, useEffect } from "react"
-
 import ItemDetail from "./ItemDetail.jsx"
 import { useParams } from "react-router-dom"
 import { getDoc, doc } from "firebase/firestore"
@@ -13,7 +12,7 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState ({})
     const {idProduct} = useParams()
 
-    const getProductsById = () => {
+    const getProductById = () => {
         const docRef = doc(db, "products", idProduct)
         getDoc(docRef)
         .then((dataDb)=>{
@@ -24,7 +23,7 @@ const ItemDetailContainer = () => {
     }
 
     useEffect (()=>{
-        getProductsById()
+        getProductById()
         }, [])
 
   return (

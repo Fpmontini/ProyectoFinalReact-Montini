@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const cartContext = createContext()
 
-const CartProvider = (children) => {
+const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     const addProductInCart = (newProduct) =>{
@@ -16,6 +16,8 @@ const CartProvider = (children) => {
 
         if (indexProduct >= 0){
             tempCart[indexProduct].quantity = tempCart[indexProduct].quantity + newProduct.quantity   //sumar cantidades
+            
+            setCart(tempCart)
         }else{
             setCart([...cart, newProduct]) //agrega producto nuevo
         }
@@ -40,10 +42,11 @@ const CartProvider = (children) => {
 
     const totalPrice = () => {
         const price = cart.reduce ((total, productCart) => total + (productCart.quantity*productCart.price), 0)
+        return price
     }
 
   return (
-    <cartContext.Provider value = { { cart, addProductInCart, totalQuantity, deleteProductById,deleteCart } }>
+    <cartContext.Provider value = { { cart, addProductInCart, totalQuantity, totalPrice, deleteProductById,deleteCart } }>
       {children}
     </cartContext.Provider >
   )

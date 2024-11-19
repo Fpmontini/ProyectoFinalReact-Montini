@@ -3,9 +3,8 @@
 import "./css/style.css"
 import { useNavigate } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { cartContext } from "../../context/cartContext"
-import { useState } from "react"
 import { Link } from "react-router-dom"
 //componente
 
@@ -20,8 +19,10 @@ const ItemDetail = ({product}) => {
     }
 
     const addProduct = (count) => {
+        
         const productCart = { ...product, quantity: count}
         addProductInCart(productCart)
+
         //ocultar itemCount
         setShowItemCount(false)
     }
@@ -42,15 +43,16 @@ const ItemDetail = ({product}) => {
                             showItemCount === true ?
                             ( <ItemCount stock={product.stock} addProduct={addProduct}/>)
                             :
-                            (<Link to ="/cart">Finalizar Compra</Link>)
+                            (<Link to ="/cart" className="item-count-container button-checkout">Finalizar Compra</Link>)
 
                         }
 
                        
-
-                        <button onClick={handleBack} className="fm__link">
-                            Volver
-                        </button>     
+                        <div className="item-count-container">
+                            <button className="button-back fm__link" onClick={handleBack} >
+                                Volver
+                            </button>     
+                        </div>
                     </div>
                     
                 </div>

@@ -6,10 +6,8 @@ import ItemList from './ItemList'
 import hocFilterProducts from '../../hoc/hocFilterProducts'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { getDocs, collection } from 'firebase/firestore'
+import { getDocs, collection,query, where } from 'firebase/firestore'
 import db from '../../db/db.js'
-
-
 
 
 
@@ -33,8 +31,29 @@ const ItemListContainer = () => { //no funciona el hoc por la logica de filtrado
   }
 
     useEffect(() => {
+      if(idCategory) {
+        getProductsByCategory()
+    }else{
       getProducts()
-    }, [idCategory])
+    }
+   }, [idCategory])
+
+  
+      const getProductsByCategory =()=>{
+        const productsRef = collection(db, "products")
+        const queryFilter = query(productsRef, where("category", "==", idCategory))
+
+        getDocs(queryFilter)
+        .then((dataDb)=> {
+          const data=dataDb.docs.map((productDb)=>{
+            return { id: productDb.id, ...productDb.data()} 
+          })
+
+          setProducts(data)
+
+        })
+
+      }
 
   return (
     <div className='container-fluid'>

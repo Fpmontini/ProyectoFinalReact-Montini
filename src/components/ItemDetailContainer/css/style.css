@@ -37,3 +37,55 @@
     width: 100%;
     min-width: 200px;
   }
+
+  .button-back{
+    width: 200px;
+    height: 50px;
+    margin: 0px;
+    padding: none;
+    font-family: audiowide;
+    background-color:#f5f5f5;
+    border-color: #cc2059;
+    color: #000000;
+    border-width: 3px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.button-checkout{
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  padding: none;
+  font-family: audiowide;
+  background-color:#f5f5f5;
+  border-color: #20cc37;
+  color: #000000;
+  border-width: 3px;
+  border-style: solid;
+  cursor: pointer;
+  gap:5px;
+}
+.item-count-container {
+  display: flex;
+  flex-direction: column; /* Alinea elementos en columna */
+  align-items: center;    /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente (si el contenedor tiene altura) */
+  gap: 20px;              /* Espacio entre el contador y el botón */
+}
+
+.count-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre los elementos del contador */
+}
+
+.count-display {
+  font-size: 1.2rem;
+  font-family: audiowide;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  width: 30px; /* Para mantener el mismo tamaño que los botones */
+}

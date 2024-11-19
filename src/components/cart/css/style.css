@@ -1,0 +1,48 @@
+
+
+.cart-container{
+    margin: 180px 0 150px 150px;
+    padding-top: 100px;
+    
+}
+
+.cart-description{
+    font-family: audiowide;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+}
+
+.button-sup {
+        width: 200px;
+        height: 50px;
+        margin: 0px;
+        padding: 5px;
+        font-family: audiowide;
+        font-size: 1rem;
+        background-color:#f5f5f5;
+        border-color: #cc2059;
+        color: #000000;
+        border-width: 3px;
+        border-style: solid;
+        cursor: pointer;
+}
+
+.order-button{
+        width: 200px;
+        margin-left: 20px;
+        padding: 5px;
+        font-family: audiowide;
+        font-size: 1rem;
+        background-color:#f5f5f5;
+        border-color: #20cc37;
+        color: #000000;
+        border-width: 3px;
+        border-style: solid;
+        cursor: pointer;
+}
+
+.important-p {
+    margin: 20px;
+    font-family: audiowide;
+    font-size: 2rem;
+}
