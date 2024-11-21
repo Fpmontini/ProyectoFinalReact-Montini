@@ -1,7 +1,7 @@
 
 
 import './App.css'
-import NavBar from './components/navBar/navBar.jsx'
+import NavBar from './components/navBar/NavBar.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import ItemListContainerWithHoc from './components/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
