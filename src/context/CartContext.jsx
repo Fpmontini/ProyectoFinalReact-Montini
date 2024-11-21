@@ -29,7 +29,8 @@ const CartProvider = ({children}) => {
         const productFilter = cart.filter((productCart) => productCart.id !== idProduct )
         setCart(productFilter)
     }
-
+    
+    //borrar carrito
     const deleteCart = ()=>{
         setCart ([])
     }
