@@ -1,11 +1,11 @@
 
 
-import { object, string, number, date, InferType } from 'yup';
+import { object, string, number, date,mixed} from 'yup';
 
 let userSchema = object({
-    fullname: string().required(),
-    phone:mixed().required(),
-    email: string().email().required(),
+    fullname: string().required("Completa el campo Nombre"),
+    phone:mixed().required("Completa el campo Telefono"),
+    email: string().email().required("El formato de email es incorrecto"),
   });
   
   // parse and assert validity
@@ -15,7 +15,7 @@ let userSchema = object({
       await userSchema.validate(dataForm)
       return {status: "succes"}
     }catch (error) {
-        return {status: "error", message}
+        return {status: "error", message: error.message}
 
     }
 
@@ -23,7 +23,7 @@ let userSchema = object({
 
 }
   
-  type User = InferType<typeof userSchema>;
+  //type User = InferType<typeof userSchema>;
   /* {
     name: string;
     age: number;

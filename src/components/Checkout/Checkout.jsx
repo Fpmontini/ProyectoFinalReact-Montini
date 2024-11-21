@@ -4,8 +4,10 @@ import { cartContext } from "../../context/cartContext"
 import { Timestamp, collection, addDoc } from "firebase/firestore"
 import db from "../../db/db.js"
 import { Link } from "react-router-dom"
+import validateForm from "../../utils/validateForm.js"
+import { toast } from 'react-toastify'
 import "./css/style.css"
-//import validateForm from "../../utils/validateForms.js"
+
 
 
 // componente
@@ -27,7 +29,7 @@ const Checkout = () => {
 
 }
 
-const handleSubmitForm = (event)=>{
+const handleSubmitForm = async (event)=>{
     event.preventDefault()
 
     const order = {
@@ -38,9 +40,13 @@ const handleSubmitForm = (event)=>{
 
     }
 
-  // const response = await validateForm(dataForm)
-  // if(response.status === "succes")
+ 
+     const response = await validateForm(dataForm)
+     if(response.status === "succes"){
      uploadOrder(order)
+     }else{
+      toast.error(response.message)
+     }
 }
 
 
@@ -53,6 +59,7 @@ const handleSubmitForm = (event)=>{
        })
         .finally(()=>{
             deleteCart()
+            toast.success("Tu orden ha sido generada correctamente")
         })
 
      }

@@ -7,9 +7,10 @@ import ItemListContainerWithHoc from './components/itemListContainer/ItemListCon
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/cartContext.jsx'
-import Checkout from './components/checkout/checkout.jsx'
+import Checkout from './components/Checkout/Checkout.jsx'
+import { ToastContainer } from 'react-toastify'
 import Cart from './components/cart/Cart.jsx'
-
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -17,9 +18,10 @@ function App() {
 
     <div className='fm__main'>
       <BrowserRouter>  
-
         <CartProvider>
-        <NavBar/>
+         <NavBar/>
+         <ToastContainer 
+         theme="light"/>
 
         <Routes>
           <Route path="/" element={<ItemListContainerWithHoc/>} />
