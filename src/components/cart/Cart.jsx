@@ -17,7 +17,7 @@ const Cart = () => {
     if(cart.length === 0){
         return (
             <div className="cart-container cart-description">
-                <h2>EL CARRITO ESTA VACIO!  </h2>
+                <h2>EL CARRITO ESTA VACIO! </h2>
                 <Link to ="/" className="button-back"> ver Productos </Link>
             </div>
         )
@@ -30,7 +30,7 @@ const Cart = () => {
         {
             cart.map((productCart) => (
                 <div key={productCart.id}>
-                    <img src = {productCart.image} alt="Productos del Carrito" width={350}/>
+                    <img src = {productCart.image[0]} alt="Productos del Carrito" width={350}/>
                 <div className="cart-description">
                     <p> Modelo:{productCart.name} </p>
                     <p>Precio por unidad: u$s {productCart.price}</p>
